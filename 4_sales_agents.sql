@@ -1,4 +1,5 @@
 /*Provide a query showing only the Employees who are Sales Agents.*/
-SELECT [FirstName], [LastName], [Title]
-FROM [EMPLOYEE]
-WHERE [Title] = "Sales Support Agent"
+select 
+	[FirstName] || ' ' || [LastName], [Title] 
+from [Employee]
+where [Title] is "Sales Support Agent"

@@ -1,3 +1,7 @@
-SELECT [FirstName], [LastName], [CustomerID], [CustomerId], [Country]
-FROM [CUSTOMER]
-WHERE [Country] = "Brazil"
+/*Provide a query only showing the Customers from Brazil.*/
+select 
+	[FirstName] || ' ' || [LastName], 
+	[Country]
+from [customer]
+where [Country] is "Brazil"
+/*where [Country] = "Brazil"*/

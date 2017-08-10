@@ -1,16 +1,15 @@
-/*Which sales agent made the most in sales in 2009?*/
+/*Which sales agent made the most in sales over all?*/
 select 
-	FirstName  ||  ' ' || LastName as 'Employee Name', 
-	max(TotalSales) as 'Top Sales 2009'
+	FirstName  ||  ' ' || LastName as 'Top Sales Rep', 
+		max(TotalSales) as 'Total Sales'
 from (
 	select
 			e.FirstName as FirstName, 
 			e.LastName as LastName,
-			round(Sum(i.Total) ,2) as TotalSales
+			round(sum(i.Total) ,2) as TotalSales
 from [Invoice] as i
 join 
 	[Customer] as c on c.[CustomerId] = i.[CustomerId]
 join 
 	[Employee] as e on e.[EmployeeId] = c.[SupportRepId]
-where i.InvoiceDate like '%2009%'
 group by c.SupportRepId )

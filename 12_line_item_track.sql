@@ -1,4 +1,8 @@
 /*Provide a query that includes the purchased track name with each invoice line item.*/
-select i.*, t.[name]
-from [InvoiceLine] as i
-JOIN [Track] as t on i.[InvoiceId] = t.[TrackId]
+select 
+	i.*, 
+	t.[name] as TrackName
+from 
+	[InvoiceLine] as i
+join 
+	[Track] as t on t.[TrackId] = i.[TrackId]
