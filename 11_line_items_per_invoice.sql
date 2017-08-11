@@ -2,7 +2,5 @@
 select 
 	InvoiceId,
 	count(*) as TotalLineItems
-from 
-	[InvoiceLine]
-group by 
-	InvoiceId
+from [InvoiceLine]
+group by InvoiceId

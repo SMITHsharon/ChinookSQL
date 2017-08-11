@@ -6,6 +6,5 @@ from [Invoice]
 where 
 	[InvoiceDate] like "%2009%" 
 	or [InvoiceDate] like "%2011%"
-group by 
-	strftime('%Y', InvoiceDate) 
+group by strftime('%Y', InvoiceDate) 
 

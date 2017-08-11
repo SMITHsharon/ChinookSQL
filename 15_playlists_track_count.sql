@@ -4,10 +4,8 @@ select
 	p.[name] as PlaylistName,
 	count (*) as TrackCount
 from [Playlist] as p
-join 
-	[PlaylistTrack] as plt on plt.[PlaylistId] = p.[PlaylistId]
-join 
-	[Track] as t on t.[TrackId] = plt.[TrackId]
+join [PlaylistTrack] as plt on plt.[PlaylistId] = p.[PlaylistId]
+join [Track] as t on t.[TrackId] = plt.[TrackId]
 group by p.Name
 
 

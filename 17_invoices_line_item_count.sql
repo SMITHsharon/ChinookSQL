@@ -3,6 +3,5 @@ select
 	i.*, 
 	count(l.InvoiceLineId) as 'Line Item Count' 
 from Invoice as i
-join 
-	[InvoiceLine] as l on l.[InvoiceId] = i.[InvoiceId] 
+join [InvoiceLine] as l on l.[InvoiceId] = i.[InvoiceId] 
 group by i.InvoiceId

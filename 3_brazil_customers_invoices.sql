@@ -7,6 +7,5 @@ select
 	[FirstName] || ' ' || [LastName], 
 	[BillingCountry]
 from [Customer] as c
-join 
-	[Invoice] as i on c.CustomerID = i.CustomerID
+join [Invoice] as i on c.CustomerID = i.CustomerID
 where [Country] is "Brazil"

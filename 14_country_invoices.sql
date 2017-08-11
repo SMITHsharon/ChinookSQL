@@ -3,5 +3,4 @@ select
 	[BillingCountry],
 	count (*) as InvCount
 from [Invoice]
-group by 
-	[BillingCountry]
+group by [BillingCountry]

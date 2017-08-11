@@ -2,7 +2,5 @@
 select 
 	i.*, 
 	t.[name] as TrackName
-from 
-	[InvoiceLine] as i
-join 
-	[Track] as t on t.[TrackId] = i.[TrackId]
+from [InvoiceLine] as i
+join [Track] as t on t.[TrackId] = i.[TrackId]
