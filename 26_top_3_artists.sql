@@ -1,12 +1,12 @@
 /*Provide a query that shows the top 3 best selling artists.*/
 /* ???????????? */
 select 
-	a.[Name] as 'Artist Name', 
-	count() as BestSelling 
-from [track] as t
-left join [Album] on [Album].[AlbumId] = t.[AlbumId]
-left join [Artist] as a on a.[ArtistId] = [Album].[ArtistID]
+	art.[Name] as 'Artist Name', 
+	count(*) as BestSelling 
+from [Artist] as art
+left join [Album] as a on a.[ArtistID] = art.[ArtistId]
+left join [Track] as t on t.[AlbumId] = a.[AlbumId]
 left join [InvoiceLine] as IL on IL.[TrackId] = t.[TrackId]
-group by a.ArtistId
+group by art.ArtistId
 order by BestSelling Desc
 limit 3
